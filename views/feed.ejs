@@ -1,0 +1,183 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=0"
+    />
+    <title>Pinterest | Gallery Layout</title>
+    <link rel="stylesheet" href="/stylesheets/feed.css" />
+  </head>
+  <!-- A Simple non functional Pinterest inspired page layout created using only HTML and CSS.
+       Created by M. Hassler - Hassified -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+  <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+
+  <body>
+    <div class="header">
+      <img
+        src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/pinterest-round-color-icon.png"
+        class="icon pinterest-icon"
+      />
+      <ul class="navigation">
+        <li><a href="/profile">Home</a></li>
+        <li>Explore</li>
+        <li>Create</li>
+      </ul>
+      <div class="search-bar">
+        <img
+          src="https://www.brilliantlightingcenter.com/data/images/icons/search.svg"
+          class="search-icon"
+        />
+        <input type="text" placeholder="Search" />
+      </div>
+      <div class="nav-icons">
+        <img
+          src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/bell-icon.png"
+          class="icon nav-icon"
+        />
+        <img
+          src="https://uxwing.com/wp-content/themes/uxwing/download/communication-chat-call/speech-bubble-black-icon.png"
+          class="icon nav-icon"
+        />
+        <img
+          src="https://uxwing.com/wp-content/themes/uxwing/download/arrow-direction/angle-bottom-icon.png"
+          class="icon nav-icon arrow-icon"
+        />
+      </div>
+    </div>
+    <div class="grid">
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1691146735493-d5bed077ef1c?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDIyODN8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1693140301742-b9349aafca29?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDIyODN8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1693748960930-aa517d67fe00?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDIyODN8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <!-- <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1695010800005-50cb50823351?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDIzNzl8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1693956089429-e2394b22071e?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI0Mzh8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1692526664882-5a2a505e89e5?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI0Mzh8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1693222918463-b3478d35131c?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI0Mzh8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1693576757206-dff6b2bad799?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI1Mjd8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1693576588093-7244ecec24c9?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI1OTB8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1693164189280-fc799a38d750?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI2NTV8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1692806511236-a142a098ec9e?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI2ODh8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1693872612869-5074ddad8b53?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI2ODh8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1692639969478-a0dad77774c3?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI2ODh8&ixlib=rb-4.0.3&q=85"
+        />
+      </div> -->
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1693074446789-f2d6295e32c3?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI2ODh8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1693162407368-ba8ac70d0423?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI3ODV8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1694164108456-e21c7e575a73?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI3ODV8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1693803817885-e6643dcc2242?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI3ODV8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1694537745850-3e1daf28fbd0?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI3ODV8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1692970126004-862efac4da0c?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI4NTZ8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+
+      <div class="grid-item">
+        <img
+          src="https://images.unsplash.com/photo-1694768302592-7e9e32fcc65a?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE2OTUzNDI4NTZ8&ixlib=rb-4.0.3&q=85"
+        />
+      </div>
+    </div>
+
+    <script>
+      $(".grid").imagesLoaded(function () {
+        $(".grid").masonry({
+          itemSelector: ".grid-item",
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile page</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="profile">
+          <div class="profile-image">
+            <img
+              src="https://images.unsplash.com/photo-1513721032312-6a18a42c8763?w=152&h=152&fit=crop&crop=faces"
+              alt=""
+            />
+            <form
+              action="/upload"
+              method="post"
+              id="#upload"
+              enctype="multipart/form-data"
+            >
+              <input type="file" name="file" />
+              <input type="text" placeholder="caption" name="posttext" />
+              <input type="submit" name="upload" />
+            </form>
+          </div>
+
+          <div class="profile-user-settings">
+            <h1 class="profile-user-name"><%=user.username%></h1>
+
+            <button class="btn profile-edit-btn">Edit Profile</button>
+            <button class="btn profile-logout-btn">
+              <a href="/logout">Logout</a>
+            </button>
+
+            <button
+              class="btn profile-settings-btn"
+              aria-label="profile settings"
+            >
+              <i class="fas fa-cog" aria-hidden="true"></i>
+            </button>
+          </div>
+
+          <div class="profile-stats">
+            <ul>
+              <li>
+                <span class="profile-stat-count"><%= user.posts.length %></span
+                ><a href="/feed"> posts</a>
+              </li>
+              <li>
+                <span class="profile-stat-count">0</span
+                ><a href="/followers"> followers </a>
+              </li>
+              <li>
+                <span class="profile-stat-count">0</span
+                ><a href="/following"> following </a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="profile-bio">
+            <p>
+              <span class="profile-real-name"><%=user.fullname %></span> Lorem
+              ipsum dolor sit, amet consectetur adipisicing elit 📷✈️🏕️
+            </p>
+          </div>
+        </div>
+
+        <!-- End of profile section -->
+      </div>
+      <!-- End of container -->
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="gallery">
+          <% if(user.posts.length > 0){ user.posts.forEach((i) => { %>
+          <div class="gallery-item" tabindex="0">
+            <img
+              src="./images/uploads/<%=i.posturl%>"
+              class="gallery-image"
+              alt="Your post"
+            />
+
+            <div class="gallery-item-info">
+              <ul>
+                <li class="gallery-item-likes">
+                  <span class="visually-hidden">Caption :</span
+                  ><i class="fas fa-pen" aria-hidden="true"></i> <%=
+                  i.posttext %>
+                </li>
+                <li class="gallery-item-comments">
+                  <span class="visually-hidden">date : </span
+                  ><i class="fa-regular fa-calendar-days"></i>
+                  <%= i.createdtime.getDate() %>-<%= i.createdtime.getMonth() %>-<%= i.createdtime.getFullYear() %>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <% })} else {%>
+          <a class="alertBox" href="#upload"
+            >There is no post created by you ! Click to create.</a
+          >
+          <%}%>
+          <!--
+            <div class="gallery-item-type">
+              <span class="visually-hidden">Video</span
+              ><i class="fas fa-video" aria-hidden="true"></i>
+            </div>
+
+            <div class="gallery-item-info">
+              <ul>
+                <li class="gallery-item-likes">
+                  <span class="visually-hidden">Likes:</span
+                  ><i class="fas fa-heart" aria-hidden="true"></i> 30
+                </li>
+                <li class="gallery-item-comments">
+                  <span class="visually-hidden">Comments:</span
+                  ><i class="fas fa-comment" aria-hidden="true"></i> 2
+                </li>
+              </ul>
+            </div>
+          </div> -->
+        </div>
+        <!-- End of gallery -->
+
+        <!-- <div class="loader"></div> -->
+      </div>
+      <!-- End of container -->
+    </main>
+    <script src="https://kit.fontawesome.com/5a2806fb6d.js" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>
